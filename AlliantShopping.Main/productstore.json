@@ -1,36 +1,36 @@
 {
   "Products": [
     {
-      "productCode": "A",
-      "price": 2.00,
-      "onSale": true
+      "ProductCode": "A",
+      "Price": 2.00,
+      "OnSale": true
     },
     {
-      "productCode": "B",
-      "price": 12.00,
-      "onSale": false
+      "ProductCode": "B",
+      "Price": 12.00,
+      "OnSale": false
     },
     {
-      "productCode": "C",
-      "price": 1.25,
-      "onSale": true
+      "ProductCode": "C",
+      "Price": 1.25,
+      "OnSale": true
     },
     {
-      "productCode": "D",
-      "price": 0.15,
-      "onSale": false
+      "ProductCode": "D",
+      "Price": 0.15,
+      "OnSale": false
     }
   ],
   "Discounts": [
     {
-      "productCode": "A",
-      "quantity": 4,
-      "discountPrice": 7.00
+      "ProductCode": "A",
+      "Quantity": 4,
+      "DiscountPrice": 7.00
     },
     {
-      "productCode": "C",
-      "quantity": 6,
-      "discountPrice": 6.00
+      "ProductCode": "C",
+      "Quantity": 6,
+      "DiscountPrice": 6.00
     }
   ]
 }
