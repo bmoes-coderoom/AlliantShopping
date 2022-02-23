@@ -24,18 +24,18 @@ namespace AlliantShopping.Business.Manager
             _productStoreManager = productStoreManager;
             _cartManager = new CartManager(_productStoreManager);
         }
-        /// <summary>
-        /// Terminal when init will load stores
-        /// Cart will be internal to Terminal
-        /// </summary>
-        /// <param name="item"></param>
-        /// <exception cref="NotImplementedException"></exception>
+
         public void Scan(string item)
         {
             var product = _productStoreManager
                 .GetAllProductInventory()
                 .FirstOrDefault(x => x.ProductCode == item);
             _cartManager.AddToCart(product);
+        }
+
+        public Cart GetCurrentCart()
+        {
+            return _cartManager.GetCart();
         }
 
         public decimal Total()

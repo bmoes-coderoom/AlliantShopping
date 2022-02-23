@@ -90,5 +90,78 @@ namespace AlliantShopping.Business.Tests.Manager
             cart.ItemDict.Should().NotContain(product, 1);
             cart.ItemDict.Count.Should().Be(0);
         }
+
+        [Fact]
+        public void GetTotalWithDiscounts_Should_Calculate_Total_In_Cart()
+        {
+            // Arrange
+            // We can use json string and real ProductStoreManager object
+            // so that we can cut down on setup
+            string json = @"{
+  ""Products"": [
+    {
+      ""ProductCode"": ""A"",
+      ""Price"": 2.00,
+      ""OnSale"": true
+    },
+    {
+      ""ProductCode"": ""B"",
+      ""Price"": 12.00,
+      ""OnSale"": false
+    },
+    {
+      ""ProductCode"": ""C"",
+      ""Price"": 1.25,
+      ""OnSale"": true
+    },
+    {
+      ""ProductCode"": ""D"",
+      ""Price"": 0.15,
+      ""OnSale"": false
+    }
+  ],
+  ""Discounts"": [
+    {
+      ""ProductCode"": ""A"",
+      ""Quantity"": 4,
+      ""DiscountPrice"": 7.00
+    },
+    {
+      ""ProductCode"": ""C"",
+      ""Quantity"": 6,
+      ""DiscountPrice"": 6.00
+    }
+  ]
+}
+";
+            var productStoreManager = new ProductStoreManager(json);
+            var cart = new Cart();
+            foreach (var product in productStoreManager.GetAllProductInventory())
+            {
+                if(product.ProductCode == "A")
+                {
+                    cart.ItemDict.Add(product, 4);
+                }
+                else if(product.ProductCode == "C")
+                {
+                    cart.ItemDict.Add(product, 6);
+                }
+                else
+                {
+                    cart.ItemDict.Add(product, 1);
+                }
+
+            }
+
+
+
+            var cartManager = new CartManager(cart, productStoreManager);
+
+            // Act
+            var result = cartManager.GetTotalWithDiscounts();
+
+            // Assert
+            result.Should().Be(25.15M);
+        }
     }
 }

@@ -19,7 +19,7 @@ namespace AlliantShopping.E2E.Features
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public partial class CalculatorFeature : object, Xunit.IClassFixture<CalculatorFeature.FixtureData>, System.IDisposable
+    public partial class ShoppingFeature : object, Xunit.IClassFixture<ShoppingFeature.FixtureData>, System.IDisposable
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -28,10 +28,10 @@ namespace AlliantShopping.E2E.Features
         
         private Xunit.Abstractions.ITestOutputHelper _testOutputHelper;
         
-#line 1 "Calculator.feature"
+#line 1 "Shopping.feature"
 #line hidden
         
-        public CalculatorFeature(CalculatorFeature.FixtureData fixtureData, AlliantShopping_E2E_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
+        public ShoppingFeature(ShoppingFeature.FixtureData fixtureData, AlliantShopping_E2E_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
             this.TestInitialize();
@@ -40,7 +40,8 @@ namespace AlliantShopping.E2E.Features
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Calculator", "A short summary of the feature", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Shopping", "As a member of the Alliant Hiring Team\r\nI want to test the coding exercises of ca" +
+                    "ndidates\r\nTo help assess their technical skills", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -75,22 +76,41 @@ namespace AlliantShopping.E2E.Features
             testRunner.CollectScenarioErrors();
         }
         
+        public virtual void FeatureBackground()
+        {
+#line 7
+#line hidden
+#line 8
+testRunner.Given("all the inventory is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+        }
+        
         void System.IDisposable.Dispose()
         {
             this.TestTearDown();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Calculator Add Scenario")]
-        [Xunit.TraitAttribute("FeatureTitle", "Calculator")]
-        [Xunit.TraitAttribute("Description", "Calculator Add Scenario")]
+        [Xunit.SkippableTheoryAttribute(DisplayName="User Goes Shopping For Items")]
+        [Xunit.TraitAttribute("FeatureTitle", "Shopping")]
+        [Xunit.TraitAttribute("Description", "User Goes Shopping For Items")]
         [Xunit.TraitAttribute("Category", "tag1")]
-        public virtual void CalculatorAddScenario()
+        [Xunit.InlineDataAttribute("ABCDABAA", "32.40", new string[0])]
+        [Xunit.InlineDataAttribute("CCCCCCC", "7.25", new string[0])]
+        [Xunit.InlineDataAttribute("ABCD", "15.40", new string[0])]
+        public virtual void UserGoesShoppingForItems(string items, string total, string[] exampleTags)
         {
-            string[] tagsOfScenario = new string[] {
+            string[] @__tags = new string[] {
                     "tag1"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Calculator Add Scenario", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 6
+            argumentsOfScenario.Add("Items", items);
+            argumentsOfScenario.Add("Total", total);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User Goes Shopping For Items", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 11
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -111,13 +131,16 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 7
- testRunner.Given("I have 2", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.FeatureBackground();
 #line hidden
-#line 8
- testRunner.When("I add 1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 12
+ testRunner.Given(string.Format("user shops for following items \'{0}\'", items), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 9
- testRunner.Then("I have 3", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 13
+ testRunner.When("user goes to checkout", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 14
+ testRunner.Then(string.Format("the total should be {0}", total), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -130,12 +153,12 @@ this.ScenarioInitialize(scenarioInfo);
             
             public FixtureData()
             {
-                CalculatorFeature.FeatureSetup();
+                ShoppingFeature.FeatureSetup();
             }
             
             void System.IDisposable.Dispose()
             {
-                CalculatorFeature.FeatureTearDown();
+                ShoppingFeature.FeatureTearDown();
             }
         }
     }

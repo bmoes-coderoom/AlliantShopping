@@ -1,10 +1,8 @@
 ﻿using AlliantShopping.Business.Interface;
 using AlliantShopping.Data;
 using AlliantShopping.Data.Models;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace AlliantShopping.Business.Manager
 {
@@ -43,6 +41,11 @@ namespace AlliantShopping.Business.Manager
                 }
 
             }
+        }
+
+        public Cart GetCart()
+        {
+            return _cart;
         }
 
         public decimal GetTotalWithDiscounts()

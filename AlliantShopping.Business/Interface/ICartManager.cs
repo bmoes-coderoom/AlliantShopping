@@ -1,4 +1,5 @@
-﻿using AlliantShopping.Data.Models;
+﻿using AlliantShopping.Data;
+using AlliantShopping.Data.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,5 +11,6 @@ namespace AlliantShopping.Business.Interface
         void AddToCart(Product product);
 
         decimal GetTotalWithDiscounts();
+        Cart GetCart();
     }
 }

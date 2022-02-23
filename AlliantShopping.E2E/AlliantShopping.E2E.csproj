@@ -26,4 +26,8 @@
     <Folder Include="Features\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\AlliantShopping.Main\AlliantShopping.Main.csproj" />
+  </ItemGroup>
+
 </Project>
