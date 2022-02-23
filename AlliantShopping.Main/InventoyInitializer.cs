@@ -9,7 +9,6 @@ namespace AlliantShopping.Main
 {
     public class InventoyInitializer
     {
-        //public static ProductStoreManager ProductStoreManager { get; set; }
         public static ProductStoreManager LoadInventory()
         {
             string fileName = "productstore.json";

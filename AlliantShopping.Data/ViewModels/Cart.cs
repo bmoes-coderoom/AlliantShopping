@@ -9,7 +9,6 @@ namespace AlliantShopping.Data
     /// <summary>
     /// Cart Object.
     /// Holds Products Added and the associated quantity
-    /// Also displays total price to user
     /// </summary>
     public class Cart
     {
@@ -18,6 +17,5 @@ namespace AlliantShopping.Data
             ItemDict = new Dictionary<Product, int>(new ProductEqualityComparer());
         }
         public Dictionary<Product,int> ItemDict { get; set; }
-        public decimal Total { get; set; }
     }
 }
