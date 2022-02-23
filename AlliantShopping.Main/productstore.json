@@ -2,19 +2,23 @@
   "Products": [
     {
       "productCode": "A",
-      "price": 2.00
+      "price": 2.00,
+      "onSale": true
     },
     {
       "productCode": "B",
-      "price": 12.00
+      "price": 12.00,
+      "onSale": false
     },
     {
       "productCode": "C",
-      "price": 1.25
+      "price": 1.25,
+      "onSale": true
     },
     {
       "productCode": "D",
-      "price": 0.15
+      "price": 0.15,
+      "onSale": false
     }
   ],
   "Discounts": [
