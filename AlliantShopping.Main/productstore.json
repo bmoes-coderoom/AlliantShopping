@@ -1,0 +1,36 @@
+{
+  "Products": [
+    {
+      "productCode": "A",
+      "price": 2.00,
+      "onSale": true
+    },
+    {
+      "productCode": "B",
+      "price": 12.00,
+      "onSale": false
+    },
+    {
+      "productCode": "C",
+      "price": 1.25,
+      "onSale": true
+    },
+    {
+      "productCode": "D",
+      "price": 0.15,
+      "onSale": false
+    }
+  ],
+  "Discounts": [
+    {
+      "productCode": "A",
+      "quantity": 4,
+      "discountPrice": 7.00
+    },
+    {
+      "productCode": "C",
+      "quantity": 6,
+      "discountPrice": 6.00
+    }
+  ]
+}
