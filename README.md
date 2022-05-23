@@ -1,3 +1,8 @@
+Screenshot of app
+![image](https://user-images.githubusercontent.com/10567180/169887105-84f8ec6b-7097-499d-88f8-00638d9e2912.png)
+
+
+
 # AlliantShoping Assignment
 
 Build a simple shopping cart that handles volume discounts as a class library with an accompanying test project.
